@@ -1,1 +1,12 @@
-cat National_Pokedex.cvs | cut -d "," -f 4 | sort | uniq
+#!/bin/bash
+ FILE=./National_Pokedex.csv
+ 
+listold(){
+	cat $FILE | cut -d "," -f 4 | sort | uniq | grep -v Type1
+}
+
+list1(){
+	cat $FILE | cut -d "," -f 3 | sort | uniq | grep -v Type1
+}
+
+"$1"
