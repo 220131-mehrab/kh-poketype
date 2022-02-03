@@ -9,4 +9,9 @@ list1(){
 	cat $FILE | cut -d "," -f 3 | sort | uniq | grep -v Type1
 }
 
-"$1"
+num(){
+	cat $FILE | cut -d "," -f 4 | grep "$1" | uniq -c
+}
+
+
+"$@"
