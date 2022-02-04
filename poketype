@@ -1,0 +1,32 @@
+#!/bin/bash
+ FILE=./National_Pokedex.csv
+ 
+usage(){
+	echo "poketype Command  [<args>]"
+	echo "        num <Type>      displays type of pokemon given"
+	echo "        numall          displays number of all"
+}
+
+listold(){
+	cat $FILE | cut -d "," -f 4 | sort | uniq | grep -v Type1
+}
+
+list1(){
+	cat $FILE | cut -d "," -f 3 | sort | uniq | grep -v Type1
+}
+
+num(){
+	cat $FILE | cut -d "," -f 4 | grep "$1" | uniq -c
+}
+
+numall(){
+        cat $FILE | cut -d "," -f 4 | sort | uniq -c
+}
+
+
+if [[ $# -eq 0 ]];then
+	usage
+	exit 1
+fi
+
+"$@"

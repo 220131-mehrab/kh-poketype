@@ -1,0 +1,2 @@
+git remote add githubmehrab https://github.com/220131-mehrab/kh-poketype.git
+git push -u githubmehrab main
